@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avanish Singh | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Avanish Singh - B.Tech CSE Student, Aspiring Software Engineer, Exploring AI & Data Science.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono for an ultra-clean Apple aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-accent">Avanish</span><span class="logo-dot">.</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button id="nav-toggle" class="nav-toggle-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="status-indicator"></span>
+            <span>Learning • Building • Improving</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Avanish Singh</span>
+          </h1>
+
+          <h2 class="hero-typing-subtitle">
+            <span class="typing-prefix">I am a </span>
+            <span class="typing-text" id="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            Computer Science student building my foundation in software development, data, and technology. Exploring practical ways to turn ideas into useful applications.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-layer-group"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-regular fa-envelope"></i> Contact Me
+            </a>
+            <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="resume-btn" title="View GitHub / Work">
+              <i class="fa-brands fa-github"></i> GitHub Profile
+            </a>
+          </div>
+
+          <div class="hero-social-strip">
+            <span class="social-label">Find me on:</span>
+            <div class="social-links">
+              <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/avanish-singh-77819b2a4/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:avanishhh0111@gmail.com" class="social-btn" aria-label="Email">
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-glow"></div>
+            <div class="avatar-box">
+              <div class="avatar-art">
+                <i class="fa-solid fa-terminal avatar-icon"></i>
+                <div class="code-badge">
+                  <span>&lt;/&gt;</span>
+                </div>
+              </div>
+              <div class="avatar-info">
+                <h3>Avanish Singh</h3>
+                <p>B.Tech CSE Student</p>
+                <div class="badge-row">
+                  <span class="pill-tag"><i class="fa-solid fa-graduation-cap"></i> SRMU '29</span>
+                  <span class="pill-tag"><i class="fa-solid fa-code"></i> Python &bull; C &bull; SQL</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Highlights -->
+            <div class="floating-chip chip-top">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>Active Builder</span>
+            </div>
+            <div class="floating-chip chip-bottom">
+              <i class="fa-solid fa-seedling"></i>
+              <span>Continuous Learner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Introduction</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card-main">
+            <h3>Building a Strong Foundation in Tech</h3>
+            <p>
+              I'm a Computer Science and Engineering student interested in software development, technology, artificial intelligence, and data science.
+            </p>
+            <p>
+              I'm currently building my foundation in programming, data structures, Python, SQL, and web development while exploring practical ways to turn ideas into useful applications.
+            </p>
+            <p>
+              My goal is to become a skilled software engineer by developing real-world projects, strengthening my problem-solving abilities, and continuously learning new technologies.
+            </p>
+
+            <div class="core-competencies">
+              <h4>Core Strengths</h4>
+              <div class="competency-tags">
+                <span class="comp-tag"><i class="fa-solid fa-check"></i> Problem Solving</span>
+                <span class="comp-tag"><i class="fa-solid fa-check"></i> Logical Thinking</span>
+                <span class="comp-tag"><i class="fa-solid fa-check"></i> Data Handling</span>
+                <span class="comp-tag"><i class="fa-solid fa-check"></i> OOP Fundamentals</span>
+                <span class="comp-tag"><i class="fa-solid fa-check"></i> Rapid Skill Acquisition</span>
+                <span class="comp-tag"><i class="fa-solid fa-trophy"></i> High-Difficulty Persistence</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-sidebar">
+            <div class="info-metric-card">
+              <div class="metric-icon"><i class="fa-solid fa-university"></i></div>
+              <div class="metric-details">
+                <h4>SRMU Lucknow</h4>
+                <p>B.Tech Computer Science &amp; Engineering</p>
+              </div>
+            </div>
+
+            <div class="info-metric-card">
+              <div class="metric-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="metric-details">
+                <h4>2025 &ndash; 2029</h4>
+                <p>Undergraduate Program Timeline</p>
+              </div>
+            </div>
+
+            <div class="info-metric-card">
+              <div class="metric-icon"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="metric-details">
+                <h4>Focus Areas</h4>
+                <p>Data Structures, AI/ML, Full Stack Web</p>
+              </div>
+            </div>
+
+            <div class="info-metric-card">
+              <div class="metric-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="metric-details">
+                <h4>Open Source</h4>
+                <p>Active repositories on GitHub @HappyY01</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The High-Difficulty Mindset & Gaming Showcase -->
+        <div class="gaming-showcase-card">
+          <div class="gaming-header">
+            <div class="gaming-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <span>Grit, Pattern Recognition &amp; Focus</span>
+            </div>
+            <h3 class="gaming-title">The High-Difficulty Mindset</h3>
+            <p class="gaming-subtitle">
+              Mastering complex, high-difficulty games demands the same cognitive habits as engineering: rapid pattern decoding, spatial thinking, patience through failure, and executing solutions under pressure.
+            </p>
+          </div>
+
+          <div class="gaming-grid">
+            <!-- Category 1: Max Difficulty -->
+            <div class="gaming-block">
+              <div class="gaming-block-header">
+                <i class="fa-solid fa-shield-halved text-accent-blue"></i>
+                <h4>Maximum Difficulty Conquests</h4>
+              </div>
+              <ul class="gaming-list">
+                <li class="gaming-item">
+                  <div class="game-tag">Mastery</div>
+                  <div class="game-info">
+                    <strong>God of War &amp; God of War Ragnarök</strong>
+                    <span>Conquered on the highest difficulty setting through precise parrying and boss pattern reading.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag">Nightmare</div>
+                  <div class="game-info">
+                    <strong>Batman: Arkham Knight</strong>
+                    <span>Mastered high-tier counter timing, spatial awareness, and full predator stealth mechanics.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag">Trilogy</div>
+                  <div class="game-info">
+                    <strong>Marvel's Spider-Man Series</strong>
+                    <span>Completed all parts: Spider-Man 1, Miles Morales, and Spider-Man 2 with full combat fluidity.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag">Reflexes</div>
+                  <div class="game-info">
+                    <strong>Mortal Kombat 11 &amp; Dragon Ball: Sparking! ZERO</strong>
+                    <span>Frame-data optimization, counter-attacks, and relentless combo execution.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag">Classic</div>
+                  <div class="game-info">
+                    <strong>Mafia &amp; Sleeping Dogs (Definitive Editions)</strong>
+                    <span>Complete narrative campaign and tactical combat mastery.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag">Complete</div>
+                  <div class="game-info">
+                    <strong>Uncharted 4: A Thief's End</strong>
+                    <span>Full story completion, solving complex environmental traversal puzzles and high-stakes cinematic combat.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Category 2: Speed & Completionism -->
+            <div class="gaming-block">
+              <div class="gaming-block-header">
+                <i class="fa-solid fa-bolt text-accent-cyan"></i>
+                <h4>Speed, Progression &amp; Completion</h4>
+              </div>
+              <ul class="gaming-list">
+                <li class="gaming-item">
+                  <div class="game-tag completion-tag">Empire 100%</div>
+                  <div class="game-info">
+                    <strong>GTA V &amp; GTA Online</strong>
+                    <span>Completed story campaign 4+ times &amp; built a complete business empire in GTA Online, owning and managing all major enterprises.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag speed-tag">48 Hours</div>
+                  <div class="game-info">
+                    <strong>Red Dead Redemption</strong>
+                    <span>Finished all main story missions end-to-end within just 2 days of focused play.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag speed-tag">Speedrun</div>
+                  <div class="game-info">
+                    <strong>Where Winds Meet (Level 80)</strong>
+                    <span>Accelerated through the progression curve, reaching Level 80 in just 2 to 3 days.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag speed-tag">2 Hours</div>
+                  <div class="game-info">
+                    <strong>Human: Fall Flat</strong>
+                    <span>Full physics puzzle speedrun completed in a single 2-hour session.</span>
+                  </div>
+                </li>
+                <li class="gaming-item">
+                  <div class="game-tag completion-tag">100% Garage</div>
+                  <div class="game-info">
+                    <strong>Forza Horizon 5</strong>
+                    <span>Unlocked virtually the entire vehicle catalog through event mastery and racing tuning.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Academic Journey</span>
+          <h2 class="section-title">Education</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-card">
+            <div class="timeline-indicator">
+              <div class="indicator-dot"></div>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-top">
+                <span class="timeline-pill">2025 &ndash; 2029</span>
+                <span class="timeline-status">Undergraduate</span>
+              </div>
+
+              <h3 class="education-degree">Bachelor of Technology (B.Tech)</h3>
+              <h4 class="education-field">Computer Science and Engineering</h4>
+              <p class="education-institution">
+                <i class="fa-solid fa-building-columns"></i> Shri Ramswaroop Memorial University (SRMU), Lucknow
+              </p>
+
+              <div class="coursework-box">
+                <h5 class="coursework-title"><i class="fa-solid fa-book-open"></i> Relevant Coursework</h5>
+                <div class="coursework-tags">
+                  <span class="course-pill">Programming in C</span>
+                  <span class="course-pill">Data Structures</span>
+                  <span class="course-pill">Python Programming</span>
+                  <span class="course-pill">Object-Oriented Programming</span>
+                  <span class="course-pill">Database Management Systems / SQL</span>
+                  <span class="course-pill">Discrete Mathematics</span>
+                  <span class="course-pill">Digital Electronics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Technical Capability</span>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Languages (Know) -->
+          <div class="skill-category">
+            <div class="category-title">
+              <div class="category-icon-box"><i class="fa-solid fa-code"></i></div>
+              <div>
+                <h3>Languages</h3>
+                <span class="category-subtitle">Core programming proficiency</span>
+              </div>
+            </div>
+
+            <div class="skill-chips">
+              <div class="skill-chip">
+                <i class="fa-brands fa-python text-accent-cyan"></i>
+                <div class="skill-chip-info">
+                  <strong>Python</strong>
+                  <small>Scripting &amp; Data</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-solid fa-c text-accent-blue"></i>
+                <div class="skill-chip-info">
+                  <strong>C Language</strong>
+                  <small>Logic &amp; Fundamentals</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-solid fa-database text-accent-cyan"></i>
+                <div class="skill-chip-info">
+                  <strong>SQL</strong>
+                  <small>Queries &amp; Relational DBs</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Currently Exploring -->
+          <div class="skill-category">
+            <div class="category-title">
+              <div class="category-icon-box"><i class="fa-solid fa-compass"></i></div>
+              <div>
+                <h3>Currently Exploring</h3>
+                <span class="category-subtitle">Active learning &amp; growth</span>
+              </div>
+            </div>
+
+            <div class="skill-chips">
+              <div class="skill-chip">
+                <i class="fa-brands fa-html5 text-orange"></i>
+                <div class="skill-chip-info">
+                  <strong>HTML5</strong>
+                  <small>Semantic Structure</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-brands fa-css3-alt text-accent-blue"></i>
+                <div class="skill-chip-info">
+                  <strong>CSS3</strong>
+                  <small>Responsive Design</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-brands fa-js text-yellow"></i>
+                <div class="skill-chip-info">
+                  <strong>JavaScript</strong>
+                  <small>DOM &amp; Interactivity</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-solid fa-network-wired text-accent-cyan"></i>
+                <div class="skill-chip-info">
+                  <strong>DSA</strong>
+                  <small>Data Structures &amp; Algorithms</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-solid fa-chart-pie text-accent-blue"></i>
+                <div class="skill-chip-info">
+                  <strong>Data Analysis</strong>
+                  <small>Exploratory Insights</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Developer Tools -->
+          <div class="skill-category">
+            <div class="category-title">
+              <div class="category-icon-box"><i class="fa-solid fa-wrench"></i></div>
+              <div>
+                <h3>Tools &amp; Workflow</h3>
+                <span class="category-subtitle">Development environments</span>
+              </div>
+            </div>
+
+            <div class="skill-chips">
+              <div class="skill-chip">
+                <i class="fa-solid fa-laptop-code text-accent-cyan"></i>
+                <div class="skill-chip-info">
+                  <strong>VS Code</strong>
+                  <small>Primary Editor</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-solid fa-book-bookmark text-orange"></i>
+                <div class="skill-chip-info">
+                  <strong>Jupyter Notebook</strong>
+                  <small>Data Exploration</small>
+                </div>
+              </div>
+
+              <div class="skill-chip">
+                <i class="fa-brands fa-git-alt text-accent-blue"></i>
+                <div class="skill-chip-info">
+                  <strong>Git &amp; GitHub</strong>
+                  <small>Version Control</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Portfolio Work</span>
+          <h2 class="section-title">Projects</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <!-- Filter Buttons (JavaScript Powered) -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="major">Major Projects</button>
+          <button class="filter-btn" data-filter="data">Data &amp; Python</button>
+          <button class="filter-btn" data-filter="web">Web &amp; Foundations</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1: Vediccare (Major) -->
+          <article class="project-card" data-category="major web">
+            <div class="project-card-header">
+              <div class="project-type-tag major-tag">
+                <i class="fa-solid fa-star"></i> Major Project
+              </div>
+              <div class="project-links-top">
+                <a href="https://github.com/HappyY01/Vediccare" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-name">Vediccare</h3>
+              <p class="project-summary">
+                A health and wellness platform bridging traditional Ayurvedic wisdom with modern digital accessibility. Focused on personalized lifestyle recommendations and intuitive user workflows.
+              </p>
+
+              <div class="project-stack">
+                <span class="stack-badge">Web Application</span>
+                <span class="stack-badge">JavaScript</span>
+                <span class="stack-badge">UI/UX</span>
+                <span class="stack-badge">Healthcare</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+              <button class="btn btn-sm btn-subtle project-modal-btn" data-project="vediccare">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2: ConstructAi (Major) -->
+          <article class="project-card" data-category="major data">
+            <div class="project-card-header">
+              <div class="project-type-tag major-tag">
+                <i class="fa-solid fa-star"></i> Major Project
+              </div>
+              <div class="project-links-top">
+                <a href="https://github.com/HappyY01/ConstructAi" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-name">ConstructAi</h3>
+              <p class="project-summary">
+                An intelligent system exploring AI-assisted workflows and smart estimation for construction and architectural planning. Designed to streamline calculations and automate resource insights.
+              </p>
+
+              <div class="project-stack">
+                <span class="stack-badge">AI / ML</span>
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">Automation</span>
+                <span class="stack-badge">Data Processing</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+              <button class="btn btn-sm btn-subtle project-modal-btn" data-project="constructai">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 3: Netflix Dataset Analysis -->
+          <article class="project-card" data-category="data">
+            <div class="project-card-header">
+              <div class="project-type-tag">
+                <i class="fa-solid fa-chart-line"></i> Data Analysis
+              </div>
+              <div class="project-links-top">
+                <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Profile">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-name">Netflix Dataset Analysis</h3>
+              <p class="project-summary">
+                Exploratory data analysis of Netflix titles, examining content distribution, genres, production countries, and release trends through data cleaning and statistical visualization.
+              </p>
+
+              <div class="project-stack">
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">Pandas</span>
+                <span class="stack-badge">Jupyter Notebook</span>
+                <span class="stack-badge">EDA</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+              <button class="btn btn-sm btn-subtle project-modal-btn" data-project="netflix">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 4: Personal Portfolio Website -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-header">
+              <div class="project-type-tag">
+                <i class="fa-solid fa-globe"></i> Web Development
+              </div>
+              <div class="project-links-top">
+                <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Profile">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-name">Personal Portfolio Website</h3>
+              <p class="project-summary">
+                A responsive personal website presenting background, coursework, skills, projects, and contact channels. Built from scratch with semantic HTML, modern responsive CSS, and interactive JavaScript.
+              </p>
+
+              <div class="project-stack">
+                <span class="stack-badge">HTML5</span>
+                <span class="stack-badge">CSS3</span>
+                <span class="stack-badge">JavaScript</span>
+                <span class="stack-badge">GitHub Pages</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="#home" class="btn btn-sm btn-outline">
+                <i class="fa-solid fa-rotate-right"></i> Live View
+              </a>
+              <button class="btn btn-sm btn-subtle project-modal-btn" data-project="portfolio">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 5: Student Programming & DSA Practice -->
+          <article class="project-card" data-category="data">
+            <div class="project-card-header">
+              <div class="project-type-tag">
+                <i class="fa-solid fa-terminal"></i> Academics &amp; DSA
+              </div>
+              <div class="project-links-top">
+                <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub Profile">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-name">Data Structures &amp; Academic Exercises</h3>
+              <p class="project-summary">
+                Implementation of fundamental data structures, algorithms, and academic programming exercises in C and Python, demonstrating programming fundamentals, logic, and problem-solving.
+              </p>
+
+              <div class="project-stack">
+                <span class="stack-badge">C</span>
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">DSA</span>
+                <span class="stack-badge">Algorithms</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> View Repo
+              </a>
+              <button class="btn btn-sm btn-subtle project-modal-btn" data-project="dsa">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div class="modal" id="project-modal" aria-hidden="true" role="dialog">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-panel">
+        <button class="modal-close" id="modal-close" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content" id="modal-content">
+          <!-- Dynamic JavaScript injection -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Reach Out</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-details">
+            <h3>Let's Connect</h3>
+            <p>
+              I am always open to discussing new opportunities, academic collaborations, open-source projects, or tech ideas. Feel free to send a message!
+            </p>
+
+            <div class="contact-card-list">
+              <a href="mailto:avanishhh0111@gmail.com" class="contact-info-link">
+                <div class="contact-info-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div>
+                  <span class="info-label">Email</span>
+                  <span class="info-val">avanishhh0111@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/in/avanish-singh-77819b2a4/" target="_blank" rel="noopener noreferrer" class="contact-info-link">
+                <div class="contact-info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div>
+                  <span class="info-label">LinkedIn</span>
+                  <span class="info-val">Avanish Singh</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="contact-info-link">
+                <div class="contact-info-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <span class="info-label">GitHub</span>
+                  <span class="info-val">github.com/HappyY01</span>
+                </div>
+              </a>
+
+              <div class="contact-info-link static-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="info-label">Location</span>
+                  <span class="info-val">Lucknow, Uttar Pradesh, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="contact-name">Your Name <span class="required">*</span></label>
+                  <input type="text" id="contact-name" name="name" placeholder="e.g. John Doe" required autocomplete="name">
+                  <span class="field-error" id="name-error">Please enter your name</span>
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-email">Your Email <span class="required">*</span></label>
+                  <input type="email" id="contact-email" name="email" placeholder="e.g. john@example.com" required autocomplete="email">
+                  <span class="field-error" id="email-error">Please enter a valid email address</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-subject">Subject <span class="required">*</span></label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Project Inquiry / Hello" required>
+                <span class="field-error" id="subject-error">Please enter a subject</span>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-message">Message <span class="required">*</span></label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Hi Avanish, I came across your portfolio..." required></textarea>
+                <span class="field-error" id="message-error">Please write a message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-notification" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <div class="toast-text">
+      <strong id="toast-title">Message Received!</strong>
+      <p id="toast-body">Thank you for reaching out. I'll get back to you soon.</p>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">Avanish<span class="logo-dot">.</span></a>
+        <p>B.Tech Computer Science &amp; Engineering Student &bull; SRMU</p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-socials">
+          <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/avanish-singh-77819b2a4/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:avanishhh0111@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+        <p class="copyright">
+          &copy; <span id="current-year">2026</span> Avanish Singh. Built with HTML, CSS, &amp; JavaScript.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
