@@ -185,19 +185,19 @@ img {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+  padding-left: clamp(1.25rem, 3.5vw, 2rem);
+  padding-right: clamp(1.25rem, 3.5vw, 2rem);
 }
 
 .section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: clamp(3.5rem, 6vw, 6rem);
+  padding-bottom: clamp(3.5rem, 6vw, 6rem);
   position: relative;
 }
 
 .section-heading {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .section-kicker {
@@ -213,11 +213,12 @@ img {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 0.75rem;
   letter-spacing: -0.03em;
   color: var(--text-heading);
+  word-break: break-word;
 }
 
 .section-rule {
@@ -525,11 +526,12 @@ img {
 }
 
 .hero-title {
-  font-size: 3.75rem;
-  line-height: 1.08;
+  font-size: clamp(2.35rem, 5.5vw, 3.75rem);
+  line-height: 1.1;
   margin-bottom: 1rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   font-weight: 700;
+  word-break: break-word;
 }
 
 .gradient-text {
@@ -539,13 +541,14 @@ img {
 }
 
 .hero-typing-subtitle {
-  font-size: 1.45rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
   font-weight: 400;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   min-height: 2.2rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .typing-prefix {
@@ -1371,7 +1374,7 @@ img {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 1.75rem;
 }
 
@@ -1888,9 +1891,82 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   16. Responsive Media Queries
+   16. Responsive Media Queries (Pixel-Perfect Across All Screens)
    -------------------------------------------------------------------------- */
-@media (max-width: 992px) {
+
+/* Tablet & Medium Screens (769px to 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 2.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-category:nth-child(3) {
+    grid-column: span 2;
+  }
+}
+
+/* Medium Tablets & Mobile Navigation Breakpoint (<= 880px) */
+@media (max-width: 880px) {
+  .nav-list {
+    display: none;
+  }
+
+  .nav-toggle-btn {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-nav);
+    backdrop-filter: blur(25px) saturate(190%);
+    -webkit-backdrop-filter: blur(25px) saturate(190%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    z-index: 999;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-menu .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1.05rem;
+    padding: 0.75rem 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1925,60 +2001,24 @@ img {
     gap: 2rem;
   }
 
-  .skills-grid {
+  .gaming-grid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Tablets & Large Phones (<= 768px) */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.75rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
   .section {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
 
-  /* Mobile Nav Drawer */
-  .nav-toggle-btn {
-    display: flex;
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
-  .nav-menu {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1.75rem;
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-120%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all var(--transition-smooth);
-  }
-
-  .nav-menu.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-    width: 100%;
+  .skill-category:nth-child(3) {
+    grid-column: span 1;
   }
 
   .form-row {
@@ -1994,15 +2034,168 @@ img {
   .footer-right {
     align-items: center;
   }
+}
 
-  .back-to-top {
-    bottom: 1.25rem;
-    left: 1.25rem;
+/* Small Tablets & Large Phones (<= 640px) */
+@media (max-width: 640px) {
+  .timeline-card {
+    gap: 1rem;
+  }
+
+  .timeline-body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .timeline-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .about-card-main,
+  .gaming-showcase-card,
+  .contact-form-container {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .modal-panel {
+    padding: 1.75rem 1.25rem;
+    width: 95%;
+    max-height: 88vh;
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Mobile Screens (<= 480px - iPhone SE, Galaxy, Pixel) */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-typing-subtitle {
+    font-size: 1.1rem;
+    min-height: 2.8rem;
+  }
+
+  .hero-description {
+    font-size: 0.975rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.25rem;
+  }
+
+  .avatar-card {
+    max-width: 290px;
+  }
+
+  .avatar-box {
+    padding: 2rem 1.25rem;
+  }
+
+  .avatar-art {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 1.25rem;
+  }
+
+  .avatar-img-container {
+    width: 130px;
+    height: 130px;
+  }
+
+  .avatar-img-container img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .chip-top {
+    top: -6px;
+    right: 0px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .chip-bottom {
+    bottom: -6px;
+    left: 0px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .project-filters {
+    gap: 0.35rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .gaming-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.6rem 0.5rem;
+  }
+
+  .game-info span {
+    font-size: 0.75rem;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px; /* Prevents auto-zoom in iOS Safari */
+    padding: 0.75rem 0.85rem;
   }
 
   .toast {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    left: 1.25rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    border-radius: var(--radius-pill);
+    padding: 0.75rem 1.15rem;
+  }
+
+  .back-to-top {
+    bottom: 1rem;
+    left: 1rem;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Extra Small / Foldable Screens (<= 360px) */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .avatar-card {
+    max-width: 260px;
+  }
+
+  .floating-chip {
+    display: none; /* Hide floating chips to avoid clutter on ultra-narrow screens */
+  }
+
+  .badge-row .pill-tag {
+    font-size: 0.725rem;
   }
 }

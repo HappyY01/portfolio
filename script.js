@@ -126,12 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.add('open');
       navToggleBtn.classList.add('open');
       navToggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; // Lock background scroll on mobile
     } else {
       navMenu.classList.remove('open');
       navToggleBtn.classList.remove('open');
       navToggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
   }
+
+  // Auto-close menu if resized to desktop view
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 880 && navMenu && navMenu.classList.contains('open')) {
+      toggleMenu(false);
+    }
+  });
 
   /* --------------------------------------------------------------------------
      4. Sticky Navbar & Scrollspy (Active Link Tracking)
