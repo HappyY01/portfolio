@@ -52,6 +52,7 @@ avanish-portfolio/
 ├── index.html        # Semantic markup and structure
 ├── style.css         # Custom styling, dark/light theme, responsive media queries
 ├── script.js         # Interactive features, typing effect, validation, filtering
+├── profile.jpg       # Profile photo
 └── README.md         # Documentation and GitHub deployment instructions
 ```
 
