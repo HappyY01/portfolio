@@ -35,12 +35,15 @@ Built for academic assignment submission and professional networking:
   - Glassmorphic navigation bar with `backdrop-filter`.
 - **Vanilla JavaScript (ES6+):**
   - **Dynamic Typing Animation:** Alternates titles in the hero headline.
+  - **macOS Interactive Terminal CLI:** Built-in command interpreter supporting commands (`help`, `about`, `skills`, `projects`, `gaming`, `education`, `contact`, `theme`, `resume`, `clear`). Triggered via header button, `</>` profile badge, or `Ctrl + \`` shortcut.
+  - **Curriculum Vitae Preview & Print Engine:** Dedicated resume modal with integrated CSS print formatting (`@media print`) for 1-click PDF exporting.
+  - **Real Email Delivery:** FormSubmit asynchronous AJAX dispatch to `avanishhh0111@gmail.com` with loading spinner and fallback.
+  - **Live GitHub REST API Feed:** Telemetry pulling live public repositories, followers, and pinned repo status from `@HappyY01`.
+  - **Interactive Project Modal & Architecture Diagrams:** Full details dialog with ASCII/Unicode visual workflow previews.
   - **Dark / Light Theme Toggle:** Persisted automatically across visits via `localStorage`.
-  - **Mobile Hamburger Navigation:** Smooth drawer toggle with auto-close on navigation.
+  - **Mobile Hamburger Navigation:** Smooth drawer toggle with body scroll locking.
   - **ScrollSpy:** Dynamic active menu indicator during scrolling.
   - **Project Filtering:** Real-time client-side filter by project category (All, Major, Data & Python, Web).
-  - **Interactive Project Modal:** Full details dialog with keyboard (`Esc`) and backdrop dismissal.
-  - **Form Validation & Toast Notification:** Validates input fields and email pattern before showing animated toast confirmation.
   - **Back-to-Top Button:** Scroll-aware floating trigger.
 
 ---

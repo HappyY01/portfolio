@@ -402,7 +402,8 @@ img {
   gap: 0.75rem;
 }
 
-.theme-toggle-btn {
+.theme-toggle-btn,
+.terminal-toggle-btn {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-pill);
@@ -417,10 +418,15 @@ img {
   font-size: 0.9rem;
 }
 
-.theme-toggle-btn:hover {
+.theme-toggle-btn:hover,
+.terminal-toggle-btn:hover {
   color: var(--text-heading);
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--border-hover);
+}
+
+.terminal-toggle-btn:hover {
+  color: var(--apple-cyan);
 }
 
 .nav-toggle-btn {
@@ -706,6 +712,16 @@ img {
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.code-badge:hover {
+  background: var(--apple-blue);
+  color: #ffffff;
+  border-color: var(--apple-blue);
+  transform: scale(1.12);
+  box-shadow: 0 0 12px rgba(41, 151, 255, 0.5);
 }
 
 .avatar-info h3 {
@@ -1479,6 +1495,188 @@ img {
 }
 
 /* --------------------------------------------------------------------------
+   Live GitHub Activity Card
+   -------------------------------------------------------------------------- */
+.github-hub-card {
+  margin-top: 3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.github-hub-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(41, 151, 255, 0.4), transparent);
+}
+
+.github-hub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.github-hub-title-box {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.github-hub-icon {
+  font-size: 1.85rem;
+  color: var(--text-heading);
+}
+
+.github-hub-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.15rem;
+}
+
+.github-hub-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.github-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: rgba(48, 209, 88, 0.08);
+  border: 1px solid rgba(48, 209, 88, 0.25);
+  font-size: 0.775rem;
+  color: var(--apple-mint);
+  font-weight: 500;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--apple-mint);
+  box-shadow: 0 0 8px rgba(48, 209, 88, 0.8);
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.github-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.gh-metric-item {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gh-metric-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+
+.gh-metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+.github-repos-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.pinned-repo-mini {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.pinned-repo-mini:hover {
+  border-color: var(--border-hover);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+.repo-mini-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.repo-mini-top a {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-heading);
+}
+
+.repo-mini-top a:hover {
+  color: var(--apple-blue);
+}
+
+.repo-badge-mini {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: rgba(41, 151, 255, 0.1);
+  color: var(--apple-blue);
+  font-weight: 500;
+}
+
+.pinned-repo-mini p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.repo-mini-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.repo-mini-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
    11. Modal Dialog (Apple Clean Sheet)
    -------------------------------------------------------------------------- */
 .modal {
@@ -1593,6 +1791,431 @@ img {
   position: absolute;
   left: 0;
   color: var(--apple-blue);
+}
+
+/* Project Visual Preview Box (Inside Modal) */
+.project-preview-box {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.35rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-chip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.preview-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--apple-mint);
+}
+
+.preview-diagram {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--apple-cyan);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* --------------------------------------------------------------------------
+   Resume / CV Modal Styles (Apple Document Preview)
+   -------------------------------------------------------------------------- */
+.resume-modal-panel {
+  max-width: 800px;
+  width: 95%;
+  max-height: 90vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.resume-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.resume-pill {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: rgba(41, 151, 255, 0.12);
+  color: var(--apple-blue);
+  font-weight: 600;
+}
+
+.resume-meta {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.resume-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.resume-document {
+  padding: 2.25rem 2.5rem;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.resume-doc-header {
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.resume-doc-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.resume-title {
+  color: var(--apple-blue);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.resume-contact-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.resume-contact-inline span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.resume-section-block {
+  margin-bottom: 1.75rem;
+}
+
+.resume-section-block h3 {
+  font-size: 1.15rem;
+  color: var(--text-heading);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-item {
+  margin-bottom: 1.25rem;
+}
+
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.resume-item-top strong {
+  font-size: 0.975rem;
+  color: var(--text-heading);
+}
+
+.resume-dates,
+.resume-badge {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--apple-cyan);
+}
+
+.resume-school {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.resume-subinfo,
+.resume-courses,
+.resume-item-desc,
+.resume-item-tech {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.resume-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  font-size: 0.875rem;
+}
+
+.resume-skills-grid div {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   macOS Interactive Terminal Window (CLI Easter Egg)
+   -------------------------------------------------------------------------- */
+.terminal-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.terminal-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.terminal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.terminal-window {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 720px;
+  height: 480px;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(41, 151, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(15px) scale(0.98);
+  transition: transform var(--transition-smooth);
+  font-family: var(--font-mono);
+}
+
+.terminal-modal.active .terminal-window {
+  transform: translateY(0) scale(1);
+}
+
+.terminal-titlebar {
+  height: 40px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  user-select: none;
+}
+
+.terminal-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.light-red { background: #ff5f56; }
+.light-yellow { background: #ffbd2e; }
+.light-green { background: #27c93f; }
+
+.traffic-light:hover {
+  opacity: 0.8;
+}
+
+.terminal-title {
+  font-size: 0.8rem;
+  color: #8b949e;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.terminal-spacer {
+  width: 50px;
+}
+
+.terminal-screen {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+}
+
+.terminal-welcome {
+  margin-bottom: 1.25rem;
+  color: #8b949e;
+}
+
+.term-cyan { color: #58a6ff; font-weight: 600; }
+.term-yellow { color: #e3b341; }
+.term-purple { color: #bc8cff; }
+.term-green { color: #3fb950; }
+.term-red { color: #ff7b72; }
+
+.term-cmd-entry {
+  margin-bottom: 0.85rem;
+}
+
+.term-cmd-line {
+  color: #58a6ff;
+  margin-bottom: 0.25rem;
+}
+
+.term-output {
+  color: #c9d1d9;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-prompt-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.term-prompt {
+  color: #3fb950;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #58a6ff;
+}
+
+/* --------------------------------------------------------------------------
+   Print Stylesheet for Resume
+   -------------------------------------------------------------------------- */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #resume-modal,
+  #resume-modal * {
+    visibility: visible;
+  }
+
+  #resume-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: #ffffff !important;
+    color: #000000 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .resume-modal-panel {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+  }
+
+  .resume-modal-topbar,
+  .modal-backdrop,
+  .modal-close {
+    display: none !important;
+  }
+
+  .resume-document {
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .resume-doc-header h2,
+  .resume-item-top strong,
+  .resume-section-block h3 {
+    color: #000000 !important;
+  }
+
+  .resume-subinfo,
+  .resume-courses,
+  .resume-item-desc,
+  .resume-school,
+  .resume-contact-inline span {
+    color: #333333 !important;
+  }
+
+  .resume-title {
+    color: #0056b3 !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -2004,6 +2627,10 @@ img {
   .gaming-grid {
     grid-template-columns: 1fr;
   }
+
+  .github-metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablets & Large Phones (<= 768px) */
@@ -2019,6 +2646,10 @@ img {
 
   .skill-category:nth-child(3) {
     grid-column: span 1;
+  }
+
+  .github-repos-preview {
+    grid-template-columns: 1fr;
   }
 
   .form-row {
@@ -2054,8 +2685,25 @@ img {
 
   .about-card-main,
   .gaming-showcase-card,
-  .contact-form-container {
+  .contact-form-container,
+  .github-hub-card {
     padding: 1.75rem 1.25rem;
+  }
+
+  .resume-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-document {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .resume-modal-topbar {
+    padding: 1rem 1.25rem;
+  }
+
+  .terminal-window {
+    height: 85vh;
   }
 
   .modal-panel {
@@ -2068,6 +2716,10 @@ img {
 
 /* Mobile Screens (<= 480px - iPhone SE, Galaxy, Pixel) */
 @media (max-width: 480px) {
+  .github-metrics-row {
+    grid-template-columns: 1fr;
+  }
+
   .hero {
     padding-top: calc(var(--header-height) + 1.5rem);
     padding-bottom: 3rem;

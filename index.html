@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet (with cache-buster for instant GitHub Pages update) -->
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
 
@@ -38,6 +38,11 @@
       </nav>
 
       <div class="nav-actions">
+        <!-- Terminal Easter Egg Button -->
+        <button id="terminal-toggle" class="terminal-toggle-btn" aria-label="Open Interactive CLI Terminal" title="Open Interactive Terminal (CLI)">
+          <i class="fa-solid fa-terminal"></i>
+        </button>
+
         <!-- Theme Toggle Button -->
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle theme">
           <i class="fa-solid fa-moon"></i>
@@ -81,11 +86,11 @@
             <a href="#projects" class="btn btn-primary">
               <i class="fa-solid fa-layer-group"></i> View Projects
             </a>
-            <a href="#contact" class="btn btn-secondary">
+            <button class="btn btn-secondary" id="resume-open-btn" title="View & Print Resume">
+              <i class="fa-regular fa-file-lines"></i> View Resume / CV
+            </button>
+            <a href="#contact" class="btn btn-outline">
               <i class="fa-regular fa-envelope"></i> Contact Me
-            </a>
-            <a href="https://github.com/HappyY01" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="resume-btn" title="View GitHub / Work">
-              <i class="fa-brands fa-github"></i> GitHub Profile
             </a>
           </div>
 
@@ -113,7 +118,7 @@
                 <div class="avatar-img-container" style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255, 255, 255, 0.15); box-shadow: 0 10px 28px rgba(0,0,0,0.45); margin: 0 auto;">
                   <img src="profile.jpg" alt="Avanish Singh" class="avatar-img" width="160" height="160" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; border-radius: 50%; display: block;">
                 </div>
-                <div class="code-badge">
+                <div class="code-badge" id="code-badge-trigger" title="Interactive Terminal Easter Egg: Click to Launch!" role="button" tabindex="0">
                   <span>&lt;/&gt;</span>
                 </div>
               </div>
@@ -713,6 +718,72 @@
             </div>
           </article>
         </div>
+
+        <!-- Live GitHub Repository & Activity Hub -->
+        <div class="github-hub-card">
+          <div class="github-hub-header">
+            <div class="github-hub-title-box">
+              <i class="fa-brands fa-github github-hub-icon"></i>
+              <div>
+                <h3 class="github-hub-title">Live GitHub Activity</h3>
+                <span class="github-hub-subtitle">Real-time telemetry via GitHub REST API</span>
+              </div>
+            </div>
+            <div class="github-live-status">
+              <span class="pulse-dot"></span>
+              <span id="github-api-status">API Connected (@HappyY01)</span>
+            </div>
+          </div>
+
+          <div class="github-metrics-row">
+            <div class="gh-metric-item">
+              <span class="gh-metric-value" id="gh-repo-count">Loading...</span>
+              <span class="gh-metric-label">Public Repos</span>
+            </div>
+            <div class="gh-metric-item">
+              <span class="gh-metric-value" id="gh-followers">Loading...</span>
+              <span class="gh-metric-label">Followers</span>
+            </div>
+            <div class="gh-metric-item">
+              <span class="gh-metric-value" id="gh-updated">Active</span>
+              <span class="gh-metric-label">Profile Status</span>
+            </div>
+            <div class="gh-metric-item">
+              <a href="https://github.com/HappyY01?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Browse All Repos
+              </a>
+            </div>
+          </div>
+
+          <div class="github-repos-preview" id="github-repos-container">
+            <!-- Dynamically populated or rendered with fallback -->
+            <div class="pinned-repo-mini">
+              <div class="repo-mini-top">
+                <i class="fa-solid fa-book-bookmark text-accent-blue"></i>
+                <a href="https://github.com/HappyY01/Vediccare" target="_blank" rel="noopener noreferrer">Vediccare</a>
+                <span class="repo-badge-mini">Major</span>
+              </div>
+              <p>Ayurvedic wellness platform bridging holistic remedies with accessible modern UI.</p>
+              <div class="repo-mini-meta">
+                <span><i class="fa-solid fa-circle text-yellow"></i> JavaScript</span>
+                <span><i class="fa-regular fa-star"></i> Featured</span>
+              </div>
+            </div>
+
+            <div class="pinned-repo-mini">
+              <div class="repo-mini-top">
+                <i class="fa-solid fa-book-bookmark text-accent-cyan"></i>
+                <a href="https://github.com/HappyY01/ConstructAi" target="_blank" rel="noopener noreferrer">ConstructAi</a>
+                <span class="repo-badge-mini">Major</span>
+              </div>
+              <p>AI-assisted workflow engine for construction estimation and architectural calculation.</p>
+              <div class="repo-mini-meta">
+                <span><i class="fa-solid fa-circle text-accent-blue"></i> Python</span>
+                <span><i class="fa-regular fa-star"></i> Featured</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -725,6 +796,131 @@
         </button>
         <div class="modal-content" id="modal-content">
           <!-- Dynamic JavaScript injection -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Resume / CV Modal Dialog (Apple Styled with Print / PDF Export) -->
+    <div class="modal" id="resume-modal" aria-hidden="true" role="dialog">
+      <div class="modal-backdrop" id="resume-backdrop"></div>
+      <div class="modal-panel resume-modal-panel">
+        <div class="resume-modal-topbar">
+          <div class="resume-topbar-left">
+            <span class="resume-pill">Curriculum Vitae</span>
+            <span class="resume-meta">Avanish Singh &bull; B.Tech CSE</span>
+          </div>
+          <div class="resume-topbar-actions">
+            <button class="btn btn-sm btn-primary" id="resume-print-btn" title="Print or Save as PDF">
+              <i class="fa-solid fa-print"></i> Print / Save PDF
+            </button>
+            <button class="modal-close" id="resume-close" aria-label="Close resume dialog">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="resume-document" id="resume-document">
+          <div class="resume-doc-header">
+            <div class="resume-header-main">
+              <h2>Avanish Singh</h2>
+              <p class="resume-title">B.Tech Computer Science &amp; Engineering &bull; Exploring AI &amp; Software Systems</p>
+              <div class="resume-contact-inline">
+                <span><i class="fa-solid fa-envelope"></i> avanishhh0111@gmail.com</span>
+                <span><i class="fa-brands fa-github"></i> github.com/HappyY01</span>
+                <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/avanish-singh-77819b2a4</span>
+                <span><i class="fa-solid fa-location-dot"></i> Lucknow, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-section-block">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>Bachelor of Technology (B.Tech) &mdash; Computer Science &amp; Engineering</strong>
+                <span class="resume-dates">2025 &ndash; 2029</span>
+              </div>
+              <p class="resume-school">Shri Ramswaroop Memorial University (SRMU), Lucknow &bull; <em>Special Collaboration with L&amp;T EduTech</em></p>
+              <p class="resume-subinfo"><strong>Academic Standing:</strong> First Year CGPA: <strong>8.65 / 10.0</strong></p>
+              <p class="resume-courses"><strong>Core Coursework:</strong> Programming in C, Data Structures, Python, Object-Oriented Programming, DBMS / SQL, Discrete Mathematics, Digital Electronics.</p>
+            </div>
+          </div>
+
+          <div class="resume-section-block">
+            <h3><i class="fa-solid fa-laptop-code"></i> Technical Skills</h3>
+            <div class="resume-skills-grid">
+              <div><strong>Core Languages:</strong> C, Python, SQL</div>
+              <div><strong>Web Technologies:</strong> HTML5, CSS3, JavaScript (DOM Manipulation, Responsive UI)</div>
+              <div><strong>Tools &amp; Environments:</strong> VS Code, Jupyter Notebook, Git &amp; GitHub, Linux CLI</div>
+              <div><strong>Core Competencies:</strong> Problem Solving, Rapid Skill Acquisition, OOP, Algorithmic Logic</div>
+            </div>
+          </div>
+
+          <div class="resume-section-block">
+            <h3><i class="fa-solid fa-layer-group"></i> Key Projects</h3>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>Vediccare &mdash; Modern Holistic Healthcare Web Platform</strong>
+                <span class="resume-badge">Major Project</span>
+              </div>
+              <p class="resume-item-desc">Architected an accessible digital health platform categorizing Ayurvedic guidance and wellness lifestyle habits into an intuitive user interface.</p>
+              <p class="resume-item-tech"><strong>Technologies:</strong> HTML5, CSS3, JavaScript, Responsive UI, Git</p>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>ConstructAi &mdash; AI Construction Estimation &amp; Analysis Engine</strong>
+                <span class="resume-badge">Major Project</span>
+              </div>
+              <p class="resume-item-desc">Investigated predictive and automated computational workflows for architectural material estimations, minimizing error in structural calculations.</p>
+              <p class="resume-item-tech"><strong>Technologies:</strong> Python, AI/ML Principles, Data Processing, Automation</p>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>Netflix Titles Exploratory Data Analysis (EDA)</strong>
+                <span class="resume-badge">Data Analysis</span>
+              </div>
+              <p class="resume-item-desc">Cleaned and performed statistical visual exploration on 8,000+ catalog titles, uncovering distribution patterns by genre, year, and country.</p>
+              <p class="resume-item-tech"><strong>Technologies:</strong> Python, Pandas, Matplotlib, Jupyter Notebook</p>
+            </div>
+          </div>
+
+          <div class="resume-section-block">
+            <h3><i class="fa-solid fa-trophy"></i> Cognitive Achievements &amp; Problem Solving</h3>
+            <p class="resume-item-desc">High-difficulty conquest mastery: Completed <em>God of War (Ragnarök)</em>, <em>Batman: Arkham Knight (Knightmare)</em>, and <em>Spider-Man Trilogy</em> on maximum difficulty. Conquered <em>Red Dead Redemption</em> storyline in 48 hours and scaled to Level 80 in <em>Where Winds Meet</em> in 3 days, exercising deep pattern recognition, spatial awareness, and resilience under pressure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- macOS Interactive CLI Terminal Modal -->
+    <div class="terminal-modal" id="terminal-modal" aria-hidden="true" role="dialog">
+      <div class="terminal-backdrop" id="terminal-backdrop"></div>
+      <div class="terminal-window" id="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-traffic-lights">
+            <button class="traffic-light light-red" id="terminal-close-btn" aria-label="Close terminal" title="Close"></button>
+            <button class="traffic-light light-yellow" id="terminal-min-btn" aria-label="Minimize terminal" title="Minimize"></button>
+            <button class="traffic-light light-green" id="terminal-max-btn" aria-label="Maximize terminal" title="Maximize"></button>
+          </div>
+          <div class="terminal-title">
+            <i class="fa-solid fa-terminal"></i> avanish@srmu: ~ (zsh)
+          </div>
+          <div class="terminal-spacer"></div>
+        </div>
+
+        <div class="terminal-screen" id="terminal-screen">
+          <div class="terminal-welcome">
+            <span class="term-cyan">AvanishOS Interactive CLI (v2.4.0-release)</span><br>
+            Type <span class="term-yellow">'help'</span> to inspect available commands, or <span class="term-yellow">'projects'</span> to explore repositories.<br>
+            Hint: Use <span class="term-purple">Up/Down arrows</span> for command history.
+          </div>
+          <div id="terminal-history"></div>
+          <div class="terminal-prompt-line">
+            <span class="term-prompt">avanish@portfolio:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          </div>
         </div>
       </div>
     </div>
@@ -809,7 +1005,7 @@
               </div>
 
               <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
+                <i class="fa-solid fa-paper-plane" id="submit-icon"></i> <span id="submit-text">Send Message</span>
               </button>
             </form>
           </div>
@@ -853,7 +1049,7 @@
     </div>
   </footer>
 
-  <!-- Custom Script -->
-  <script src="script.js"></script>
+  <!-- Custom Script (with cache-buster) -->
+  <script src="script.js?v=4.0"></script>
 </body>
 </html>
